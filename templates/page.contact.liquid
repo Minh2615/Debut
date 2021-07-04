@@ -12,6 +12,7 @@
       {% endif %}
 
       <div class="contact-form form-vertical">
+        {{pages.about.url}}
         {%- assign formId = 'ContactForm' -%}
         {% form 'contact', id: formId %}
           {% include 'form-status', form: form, form_id: formId %}

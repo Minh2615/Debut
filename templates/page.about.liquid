@@ -1,0 +1,23 @@
+<h1>{{ page.title }}</h1>
+<p>{{page.content}}</p>
+
+<h1>{{ 'hello, world!' | capitalize }}</h1>
+<h1>{{ 'hello, world!' | capitalize | remove: "world" }}</h1>
+
+{%- if template.name == 'index' -%}
+  <h1 itemscope itemtype="http://schema.org/Organization">
+{%- else -%}
+  <div itemscope itemtype="http://schema.org/Organization">
+{%- endif -%}
+
+  <a href="/" itemprop="url">
+    <img src="{{ "logo.svg" | asset_url }}"
+      alt="{{ shop.name }}"
+      itemprop="logo">
+  </a>
+
+{%- if template.name == 'index' -%}
+  </h1>
+{%- else -%}
+  </div>
+{%- endif -%}
